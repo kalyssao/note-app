@@ -1,0 +1,26 @@
+{
+  "name": "mongo-backend",
+  "version": "1.0.0",
+  "description": "express mongo collaboration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "npm run test",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "mongo",
+    "express",
+    "backend"
+  ],
+  "author": "the lyss",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.16"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
