@@ -3,7 +3,7 @@ const Note = require('../models/note')
 
 noteRouter.get('/', (request, response, next) => {
     Note.find({}).then(res => {
-        response.status(200).send({message: "successful"})
+        response.status(200).send(res)
         next()
     })
 })
