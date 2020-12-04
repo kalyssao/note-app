@@ -3,6 +3,7 @@ const cors = require('cors')
 const app = express()
 const mongoose = require('mongoose')
 const noteRouter = require('./controllers/note')
+const userRouter = require('./controllers/user')
 require('dotenv').config()
 
 const config = {
@@ -11,6 +12,7 @@ const config = {
 }
 
 app.use(express.json())
+app.use(cors())
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', "*")
@@ -27,7 +29,8 @@ mongoose.connect(process.env.MONGO_DB_URI, config)
 })
 
 app.use('/note', noteRouter)
+app.use('/user', userRouter)
 
-app.listen(5000, () => {
-    console.log('listening on port', 5000)
+app.listen(7000, () => {
+    console.log('listening on port', 7000)
 })

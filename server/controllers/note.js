@@ -1,6 +1,8 @@
 const noteRouter = require('express').Router()
 const Note = require('../models/note')
 
+
+// Getting all notes
 noteRouter.get('/', (request, response, next) => {
     Note.find({}).then(res => {
         response.status(200).send(res)
@@ -12,7 +14,7 @@ noteRouter.post('/', async (request, response, next) => {
     const { title, content } = request.body
     console.log(request.body)
     
-    if (title && content) {
+    if (title && content ) {   
         const noteCount = await Note.countDocuments()
         const newNote = new Note({
             id: noteCount + 1,
