@@ -12,7 +12,7 @@ export default function Home() {
         history.push('/')
     }
     return (
-        <div>
+        <div className="home--div">
             <Button onClick={logOut}>Log Out</Button>
             <NewNote/>
             <NoteList/>

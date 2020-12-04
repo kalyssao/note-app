@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Note, Card, Input, Button, Spacer } from '@geist-ui/react'
 import { useHistory } from 'react-router-dom'
+import axios from 'axios'
 
 export default function Login() {
     let history = useHistory()
@@ -16,13 +17,16 @@ export default function Login() {
         setPassword(event.target.value)
     }
     function logIn(){
-        if(username === "kalyssao" && password === "test"){
-            console.log('logged in!')
-            history.push("/home")
-        } else{
-            console.log('error')
-            setError(true)
-        }
+        axios.post('user/login', {
+            username: username,
+            password: password
+        }).then((res) => {
+            if(res.status === 200){
+                history.push("/home")
+            }
+        }).catch((err) => {
+            console.log(err)
+        })
     }
 
     return (
