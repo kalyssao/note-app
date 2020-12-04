@@ -16,7 +16,7 @@ export default function NewNote() {
     }
 
     function addNote(){
-        axios.post("http://localhost:5000/note", {
+        axios.post("http://localhost:7000/note", {
             "title": title,
             "content": content
         })

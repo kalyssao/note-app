@@ -17,7 +17,7 @@ export default function Login() {
         setPassword(event.target.value)
     }
     function logIn(){
-        axios.post('user/login', {
+        axios.post('http://localhost:7000/user/login', {
             username: username,
             password: password
         }).then((res) => {
