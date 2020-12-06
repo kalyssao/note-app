@@ -6,6 +6,8 @@ const noteRouter = require('./controllers/note')
 const userRouter = require('./controllers/user')
 require('dotenv').config()
 
+const PORT = process.env.PORT || 4000
+
 const config = {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -31,6 +33,6 @@ mongoose.connect(process.env.MONGO_DB_URI, config)
 app.use('/note', noteRouter)
 app.use('/user', userRouter)
 
-app.listen(7000, () => {
-    console.log('listening on port', 7000)
+app.listen(PORT, () => {
+    console.log('listening on port', PORT)
 })
