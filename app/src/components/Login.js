@@ -5,7 +5,7 @@ import Header from './Header'
 import axios from 'axios'
 
 export default function Login() {
-    const API_ENDPOINT = process.env.API_ENDPOINT || 'kalyssa-notes-app.herokuapp.com'
+    const API_ENDPOINT = process.env.API_ENDPOINT || 'http://kalyssa-notes-app.herokuapp.com'
 
     let history = useHistory()
     const [ username, setUsername ] = useState('')
