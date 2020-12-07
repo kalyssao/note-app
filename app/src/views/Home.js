@@ -1,20 +1,17 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { Button } from '@geist-ui/react'
+import { Divider, Spacer } from '@geist-ui/react'
 
 import NewNote from '../components/NewNote'
 import NoteList from '../components/NoteList'
+import Header from '../components/Header'
 
 export default function Home() {
-    let history = useHistory()
-    function logOut(){
-        console.log('logged out')
-        history.push('/')
-    }
+    
     return (
-        <div className="home--div">
-            <Button onClick={logOut}>Log Out</Button>
+        <div>
+            <Header/>
             <NewNote/>
+            <Spacer/>
             <NoteList/>
         </div>
     )
