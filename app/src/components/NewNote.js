@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Note, Card, Input, Spacer, Textarea, Button } from '@geist-ui/react'
+import { Note, Input, Spacer, Textarea, Button } from '@geist-ui/react'
 
 export default function NewNote() {
     const [ title, setTitle ] = useState('')

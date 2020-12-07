@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Spacer } from '@geist-ui/react'
+import { Spacer } from '@geist-ui/react'
 
 import NewNote from '../components/NewNote'
 import NoteList from '../components/NoteList'
