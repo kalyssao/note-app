@@ -17,7 +17,7 @@ export default function NoteList() {
     const [ notes, setNotes ] = useState([])
 
     function loadAll(){
-        axios.get("http://localhost:5000/note")
+        axios.get("http://localhost:7000/note")
         .then((res) => {
             setNotes(...notes, res.data)
         })
