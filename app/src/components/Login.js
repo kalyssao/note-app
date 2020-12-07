@@ -5,10 +5,13 @@ import Header from './Header'
 import axios from 'axios'
 
 export default function Login() {
+    const API_ENDPOINT = process.env.API_ENDPOINT || 'kalyssa-notes-app.herokuapp.com'
+
     let history = useHistory()
     const [ username, setUsername ] = useState('')
     const [ password, setPassword ] = useState('')
     const [ error, setError ] = useState(false)
+    
     
     function handleUsername(event){
         setUsername(event.target.value)
@@ -18,7 +21,7 @@ export default function Login() {
         setPassword(event.target.value)
     }
     function logIn(){
-        axios.post('http://localhost:7000/user/login', {
+        axios.post(`${API_ENDPOINT}/login`, {
             username: username,
             password: password
         }).then((res) => {

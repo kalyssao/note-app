@@ -15,9 +15,10 @@ function Note({ title, content }) {
 
 export default function NoteList() {
     const [ notes, setNotes ] = useState([])
+    const API_ENDPOINT = process.env.API_ENDPOINT || 'kalyssa-notes-app.herokuapp.com'
 
     function loadAll(){
-        axios.get("http://localhost:7000/note")
+        axios.get(`${API_ENDPOINT}/note`)
         .then((res) => {
             setNotes(...notes, res.data)
         })
