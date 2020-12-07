@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Route } from 'react-router-dom'
 import Landing from './views/Landing'
 import Login from './components/Login'
