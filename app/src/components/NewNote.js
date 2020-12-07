@@ -22,6 +22,7 @@ export default function NewNote() {
         })
         .then((res) => {
             console.log(res.body)
+            setSuccess(true)
         })
         .catch((err) => {
             console.log(err)
@@ -31,23 +32,25 @@ export default function NewNote() {
     }
 
     return (
-        <Card shadow>
+        <div className="newnote--div">
+            <h4>New note.</h4>
             { success
-            ? <Note label={false}>Successfully added note!</Note>
+            ? setTimeout(() => <Note className="success" label={false}>Successfully added note!</Note>, 3000)
             : <></>
             }
-            <Input value={title} onChange={handleTitle} placeholder="Title"></Input>
+            <Input width="50%" value={title} onChange={handleTitle} placeholder="Title"></Input>
 
             <Spacer/>
 
             <Textarea 
+            width="25%"
             value={content}
             onChange={handleContent} 
             placeholder="Enter your note content"/>
 
             <Spacer/>
-            <Button onClick={addNote}>Add Note!</Button>
+            <Button size="medium" onClick={addNote}>Add Note!</Button>
 
-        </Card>
+        </div>
     )
 }
