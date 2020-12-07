@@ -5,7 +5,7 @@ import Header from './Header'
 import axios from 'axios'
 
 export default function Login() {
-    const API_ENDPOINT = process.env.API_ENDPOINT || 'http://kalyssa-notes-app.herokuapp.com'
+    const API_ENDPOINT = process.env.API_ENDPOINT || 'https://kalyssa-notes-app.herokuapp.com'
 
     let history = useHistory()
     const [ username, setUsername ] = useState('')
@@ -41,7 +41,7 @@ export default function Login() {
             <Spacer/>
             {
                 error
-                ? <Note type="error" label="error">Incorrect username or password</Note>
+                ? <Note width="48%" type="error" label="error">Incorrect username or password</Note>
                 : <></>
 
             }
