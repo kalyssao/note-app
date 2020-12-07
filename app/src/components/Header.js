@@ -4,7 +4,6 @@ import { Button } from '@geist-ui/react'
 
 export default function Header() {
     let history = useHistory()
-    const [loggedIn, isLoggedIn] = useState(false)
     
     function logOut(){
         localStorage.setItem('loggedIn', 'false')
