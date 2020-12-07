@@ -21,7 +21,7 @@ export default function Login() {
         setPassword(event.target.value)
     }
     function logIn(){
-        axios.post(`${API_ENDPOINT}/login`, {
+        axios.post(`${API_ENDPOINT}/user/login`, {
             username: username,
             password: password
         }).then((res) => {

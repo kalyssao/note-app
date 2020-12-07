@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Note, Input, Spacer, Textarea, Button } from '@geist-ui/react'
 
 export default function NewNote() {
+    const API_ENDPOINT = process.env.API_ENDPOINT || 'https://kalyssa-notes-app.herokuapp.com'
     const [ title, setTitle ] = useState('')
     const [ content, setContent ] = useState('')
     const [ success, setSuccess ] = useState(false)
@@ -16,7 +17,7 @@ export default function NewNote() {
     }
 
     function addNote(){
-        axios.post("http://localhost:7000/note", {
+        axios.post(`${API_ENDPOINT}/note`, {
             "title": title,
             "content": content
         })
