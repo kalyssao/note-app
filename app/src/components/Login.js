@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Note, Card, Input, Button, Spacer } from '@geist-ui/react'
+import { Note, Input, Button, Spacer } from '@geist-ui/react'
 import { useHistory } from 'react-router-dom'
+import Header from './Header'
 import axios from 'axios'
 
 export default function Login() {
@@ -22,6 +23,7 @@ export default function Login() {
             password: password
         }).then((res) => {
             if(res.status === 200){
+                localStorage.setItem('loggedIn', 'true')
                 history.push("/home")
             }
         }).catch((err) => {
@@ -30,15 +32,18 @@ export default function Login() {
     }
 
     return (
-        <Card shadow>
+        <div>
+            <Header/>
+            <Spacer/>
             {
                 error
-                ? <Note label="error">Incorrect username or password</Note>
+                ? <Note type="error" label="error">Incorrect username or password</Note>
                 : <></>
 
             }
             
             <Input 
+            width="48%"
             value={username} 
             onChange={handleUsername} 
             placeholder="Username"/>
@@ -46,13 +51,14 @@ export default function Login() {
             <Spacer/>
 
             <Input.Password 
+            width="48%"
             value={password}
             onChange={handlePassword}
             placeholder="Password"/>
             <Spacer/>
 
-            <Button onClick={logIn}>Log In</Button>
+            <Button size="medium" onClick={logIn}>Log In</Button>
             
-        </Card>
+        </div>
     )
 }
