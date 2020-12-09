@@ -33,7 +33,7 @@ export default function NewNote() {
     }
 
     return (
-        <div className="newnote--div">
+        <div style={{marginTop: "20px"}} className="newnote--div">
             <h4>New note.</h4>
             { success
             ? setTimeout(() => <Note className="success" label={false}>Successfully added note!</Note>, 3000)
